@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>满江红 - 岳飞 | 经典诗词赏析</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
         }
 
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
+            --primary: #8B0000; /* 深红 - 满江红主色调 */
+            --secondary: #B22222; /* 砖红 */
+            --accent: #CD5C5C; /* 印度红 */
+            --light: #F8F0F0; /* 浅红底 */
+            --dark: #800000; /* 暗红 */
             --text: #333333;
             --white: #ffffff;
         }
@@ -26,7 +26,7 @@
         body {
             background-color: var(--light);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         header {
@@ -101,7 +101,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1579403124614-197f69d8187b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -117,14 +117,16 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'SimKai', 'KaiTi', serif;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
+            font-style: italic;
         }
 
         .btn {
@@ -162,6 +164,7 @@
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
+            font-family: 'SimKai', 'KaiTi', serif;
         }
 
         .section-title h2::after {
@@ -182,43 +185,59 @@
             margin: 0 auto;
         }
 
-        .about-content {
+        .poem-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
 
-        .about-img {
+        .poem-img {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .about-img img {
+        .poem-img img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.5s ease;
         }
 
-        .about-img:hover img {
+        .poem-img:hover img {
             transform: scale(1.05);
         }
 
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
+        .poem-text {
+            font-family: 'SimKai', 'KaiTi', serif;
         }
 
-        .about-text p {
+        .poem-text h3 {
+            font-size: 2.2rem;
             margin-bottom: 1.5rem;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .poem-text .poem {
+            font-size: 1.5rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        .poem-text .annotation {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-indent: 2em;
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -243,7 +262,7 @@
         }
 
         .stat-item h3 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--dark);
             margin-bottom: 0.5rem;
         }
@@ -252,17 +271,17 @@
             color: var(--text);
         }
 
-        .initiatives {
+        .related {
             background-color: var(--white);
         }
 
-        .initiatives-grid {
+        .related-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .initiative-card {
+        .related-card {
             background-color: var(--light);
             border-radius: 10px;
             overflow: hidden;
@@ -270,37 +289,38 @@
             transition: transform 0.3s ease;
         }
 
-        .initiative-card:hover {
+        .related-card:hover {
             transform: translateY(-10px);
         }
 
-        .initiative-img {
+        .related-img {
             height: 200px;
             overflow: hidden;
         }
 
-        .initiative-img img {
+        .related-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .initiative-card:hover .initiative-img img {
+        .related-card:hover .related-img img {
             transform: scale(1.1);
         }
 
-        .initiative-content {
+        .related-content {
             padding: 1.5rem;
         }
 
-        .initiative-content h3 {
+        .related-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--dark);
+            font-family: 'SimKai', 'KaiTi', serif;
         }
 
-        .initiative-content p {
+        .related-content p {
             margin-bottom: 1.5rem;
         }
 
@@ -314,6 +334,7 @@
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            font-family: 'SimKai', 'KaiTi', serif;
         }
 
         .cta p {
@@ -422,12 +443,29 @@
             cursor: pointer;
         }
 
+        /* 诗词赏析特殊样式 */
+        .appreciation {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        .appreciation h4 {
+            color: var(--dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
         @media (max-width: 992px) {
-            .about-content {
+            .poem-content {
                 grid-template-columns: 1fr;
             }
             
-            .initiatives-grid {
+            .related-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
@@ -442,11 +480,11 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             nav ul {
@@ -475,7 +513,7 @@
                 display: block;
             }
             
-            .initiatives-grid {
+            .related-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -499,19 +537,19 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+                <i class="fas fa-scroll"></i>
+                <span>满江红</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#poem">诗词原文</a></li>
+                    <li><a href="#appreciation">诗词赏析</a></li>
+                    <li><a href="#related">相关作品</a></li>
+                    <li><a href="#contact">关于我们</a></li>
                 </ul>
             </nav>
         </div>
@@ -520,92 +558,123 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1>满江红·写怀</h1>
+            <p>宋 · 岳飞</p>
+            <a href="#poem" class="btn">赏读诗词</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- Poem Section -->
+    <section id="poem">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2>满江红·写怀</h2>
+                <p>岳飞经典词作，抒发壮志未酬的悲愤与报国情怀</p>
             </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+            <div class="poem-content">
+                <div class="poem-img">
+                    <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="岳飞满江红">
                 </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                <div class="poem-text">
+                    <h3>满江红·写怀</h3>
+                    <div class="poem">
+怒发冲冠，凭栏处、潇潇雨歇。
+抬望眼、仰天长啸，壮怀激烈。
+三十功名尘与土，八千里路云和月。
+莫等闲、白了少年头，空悲切。
+
+靖康耻，犹未雪。
+臣子恨，何时灭。
+驾长车，踏破贺兰山缺。
+壮志饥餐胡虏肉，笑谈渴饮匈奴血。
+待从头、收拾旧山河，朝天阙。
+                    </div>
+                    <div class="appreciation">
+                        <h4>诗词注释</h4>
+                        <p><strong>怒发冲冠</strong>：形容愤怒至极，头发直竖，顶着帽子。</p>
+                        <p><strong>潇潇</strong>：形容雨势急骤。</p>
+                        <p><strong>靖康耻</strong>：指宋钦宗靖康二年（1127年），金兵攻陷汴京，掳走徽、钦二帝的耻辱。</p>
+                        <p><strong>贺兰山</strong>：此处代指金国的腹地。</p>
+                        <p><strong>朝天阙</strong>：朝见皇帝。天阙，指皇帝的宫殿。</p>
+                    </div>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
+                    <i class="fas fa-feather-alt"></i>
+                    <h3 class="counter" data-target="93">0</h3>
+                    <p>全词字数</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
+                    <i class="fas fa-history"></i>
+                    <h3 class="counter" data-target="896">0</h3>
+                    <p>创作距今(年)</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                    <i class="fas fa-book"></i>
+                    <h3 class="counter" data-target="数百">0</h3>
+                    <p>收录典籍数</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
+    <!-- Appreciation Section -->
+    <section class="related" id="appreciation">
         <div class="container">
             <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+                <h2>诗词赏析</h2>
+                <p>深入理解满江红的艺术价值与历史背景</p>
             </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+            <div class="appreciation">
+                <h4>创作背景</h4>
+                <p>《满江红·写怀》一般认为是南宋抗金名将岳飞的词作。此词上片抒写作者对中原重陷敌手的悲愤，对局势前功尽弃的痛惜，表达了自己继续努力争取壮年立功的心愿；下片抒写作者对民族敌人的深仇大恨，对祖国统一的殷切愿望，对国家朝廷的赤胆忠心。</p>
+                <br>
+                <h4>艺术特色</h4>
+                <p>全词情调激昂，慷慨壮烈，显示出一种浩然正气和英雄气质，表现了作者报国立功的信心和乐观主义精神。词里句中无不透出雄壮之气，充分表现作者忧国报国的壮志胸怀。这首爱国将领的抒怀之作，情调激昂，慷慨壮烈，充分表现了中华民族不甘屈辱、奋发图强、雪耻若渴的神威，从而成为千古传诵的名篇。</p>
+                <br>
+                <h4>历史影响</h4>
+                <p>这首词激励了中华民族一代又一代的爱国志士，成为中华民族爱国主义精神的象征。它不仅在中国文学史上占有重要地位，也成为了中华民族精神文化的重要组成部分。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Works Section -->
+    <section class="related" id="related">
+        <div class="container">
+            <div class="section-title">
+                <h2>相关作品</h2>
+                <p>岳飞其他经典作品及后人咏颂之作</p>
+            </div>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="related-img">
+                        <img src="https://images.unsplash.com/photo-1585076642667-120741b85003?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="小重山">
                     </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="related-content">
+                        <h3>小重山·昨夜寒蛩不住鸣</h3>
+                        <p>昨夜寒蛩不住鸣。惊回千里梦，已三更。起来独自绕阶行。人悄悄，帘外月胧明。</p>
+                        <a href="#" class="btn">赏读全文</a>
                     </div>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+                <div class="related-card">
+                    <div class="related-img">
+                        <img src="https://images.unsplash.com/photo-1518491233488-b608a6b9713c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="池州翠微亭">
                     </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="related-content">
+                        <h3>池州翠微亭</h3>
+                        <p>经年尘土满征衣，特特寻芳上翠微。好水好山看不足，马蹄催趁月明归。</p>
+                        <a href="#" class="btn">赏读全文</a>
                     </div>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
+                <div class="related-card">
+                    <div class="related-img">
+                        <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="后人咏颂">
                     </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="related-content">
+                        <h3>后人咏颂满江红</h3>
+                        <p>历代文人墨客对满江红的唱和之作，展现了这首词的深远影响和文化价值。</p>
+                        <a href="#" class="btn">查看更多</a>
                     </div>
                 </div>
             </div>
@@ -615,9 +684,9 @@
     <!-- CTA Section -->
     <section class="cta" id="get-involved">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <h2>传承经典 弘扬文化</h2>
+            <p>中华诗词是中华文化的瑰宝，让我们一起学习、传承、弘扬中华优秀传统文化。</p>
+            <a href="#" class="btn">加入诗词交流</a>
         </div>
     </section>
 
@@ -626,44 +695,44 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
+                    <h3>满江红赏析</h3>
+                    <p>致力于中华经典诗词的传承与推广，让更多人领略中华传统文化的魅力。</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>快速链接</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#poem">诗词原文</a></li>
+                        <li><a href="#appreciation">诗词赏析</a></li>
+                        <li><a href="#related">相关作品</a></li>
+                        <li><a href="#contact">关于我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Programs</h3>
+                    <h3>经典诗词</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
+                        <li><a href="#">念奴娇·赤壁怀古</a></li>
+                        <li><a href="#">水调歌头·明月几时有</a></li>
+                        <li><a href="#">声声慢·寻寻觅觅</a></li>
+                        <li><a href="#">将进酒</a></li>
+                        <li><a href="#">登高</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <h3>联系我们</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 文化街88号，诗词大厦</p>
+                    <p><i class="fas fa-phone"></i> +86 (010) 8888-7777</p>
+                    <p><i class="fas fa-envelope"></i> contact@shici.com</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2025 满江红诗词赏析 | 版权所有</p>
             </div>
         </div>
     </footer>
@@ -680,7 +749,14 @@
             const speed = 200; // The lower the slower
             
             counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
+                // 处理"数百"这样的非数字值
+                const targetText = counter.getAttribute('data-target');
+                if (isNaN(parseInt(targetText))) {
+                    counter.innerText = targetText;
+                    return;
+                }
+                
+                const target = +targetText;
                 const count = +counter.innerText;
                 
                 const inc = target / speed;
